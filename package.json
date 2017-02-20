@@ -1,0 +1,19 @@
+{
+  "name": "murciaFrontendPwa",
+  "version": "1.0.0",
+  "description": "Example pwa with a express server for sending push notifications",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Gabriel Perales",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "env2": "^2.1.1",
+    "express": "^4.14.1",
+    "web-push": "^3.2.2"
+  }
+}
