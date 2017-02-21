@@ -17,31 +17,32 @@ app.use(bodyParser.json());
 
 app.get('/manifest.json', (req, res) => {
   const responseJson = {
+    short_name: 'MurciaPWA',
     name: 'MurciaFrontend WPA',
     gcm_sender_id: process.env.GCM_SENDER_ID,
     permissions: [
       'gcm',
     ],
     icons: [{
-      src: 'assets/icons/96.jpg',
+      src: 'assets/icons/96.png',
       sizes: '96x96',
-      type: 'image/jpg',
+      type: 'image/png',
     }, {
-      src: 'assets/icons/144.jpg',
+      src: 'assets/icons/144.png',
       sizes: '144x144',
-      type: 'image/jpg',
+      type: 'image/png',
     }, {
-      src: 'assets/icons/192.jpg',
+      src: 'assets/icons/192.png',
       sizes: '192x192',
-      type: 'image/jpg',
+      type: 'image/png',
     }, {
-      src: 'assets/icons/256.jpg',
+      src: 'assets/icons/256.png',
       sizes: '256x256',
-      type: 'image/jpg',
+      type: 'image/png',
     }, {
-      src: 'assets/icons/512.jpg',
+      src: 'assets/icons/512.png',
       sizes: '512x512',
-      type: 'image/jpg',
+      type: 'image/png',
     }],
     start_url: '/',
     display: 'standalone',
@@ -107,7 +108,7 @@ app.use('/', (req, res) => {
   <html>
     <head>
       <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <title>Murcia Frontend PWA</title>
       <link rel="manifest" href="manifest.json"/>
       <link rel="stylesheet" href="css/style.css"/>

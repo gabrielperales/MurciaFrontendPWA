@@ -27,3 +27,7 @@ Para instalar las dependencias debemos ejecutar:
 
 `$ npm start`
 
+## Despliegue sobre now
+
+[![Deploy to
+now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/gabrielperales/MurciaFrontendPWA&env=GCM_API_KEY&env=GCM_SENDER_ID&env=SUPPORT_EMAIL)
