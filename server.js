@@ -69,6 +69,16 @@ app.post('/subscription', (req, res) => {
   }
 });
 
+app.get('/subscriptions', (req, res) => {
+  res.json(subscriptions.map(sub => sub.endpoint));
+});
+
+app.delete('/subscriptions', (req, res) => {
+  subscriptions = [];
+
+  res.json(subscriptions);
+});
+
 app.get('/pushKey', (req, res) => {
   res.json({
     key: keys.publicKey,
@@ -87,12 +97,7 @@ app.get('/send-notification', (req, res) => {
     });
 
     subscriptions.forEach((subscription) => {
-      webPush.sendNotification(subscription, payload)
-        .catch(({ statusCode, body }) => {
-          console.log(`statusCode: ${statusCode}`);
-          console.log(`body: ${body}`);
-          subscriptions = subscriptions.filter(sub => sub !== subscription);
-        })
+      webPush.sendNotification(subscription, payload);
     });
 
     res.sendStatus(200);
@@ -112,6 +117,13 @@ app.use('/', (req, res) => {
       <title>Murcia Frontend PWA</title>
       <link rel="manifest" href="manifest.json"/>
       <link rel="stylesheet" href="css/style.css"/>
+      <!-- Chrome, Firefox OS and Opera -->
+      <meta name="theme-color" content="#9A1319" />
+      <!-- Windows Phone -->
+      <meta name="msapplication-navbutton-color" content="#9A1319" />
+      <!-- iOS Safari -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     </head>
     <body>
        <h1>Murcia Frontend</h1>
